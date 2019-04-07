@@ -1,0 +1,24 @@
+﻿@using JAICT.Blazor.Recipes.UI.Client.Mvvm.View
+@using JAICT.Blazor.Recipes.UI.Client.ViewModels
+@inherits ViewComponentBase<RegisterOrganisationViewModel>
+
+<div>
+    <div class="ml-auto">
+        <h3>Register a new organisation</h3>
+        <div class="input-group mb-3">
+            <input class="form-control" bind=ViewModel.OrganisationName />
+        </div>
+        <div hidden="@(string.IsNullOrWhiteSpace(@ViewModel.AccessKey))">
+            <p class="font-weight-bold" hidden="@(string.IsNullOrWhiteSpace(@ViewModel.AccessKey))">In the text area is the access key for your organisation. Store this in a safe place as it will only be provided once!</p>
+            <textarea class="form-control no-wrap" style="min-width: 100%">@ViewModel.AccessKey</textarea>
+        </div>
+        <div class="input-group mb-3">
+            <button onclick=@(() => ViewModel.RegisterCommand.Execute()) type="button" class="btn btn-primary px-5">
+                Register Organisation ➝
+            </button>
+        </div>
+        <div hidden="@(string.IsNullOrWhiteSpace(@ViewModel.Error))" class="alert alert-danger" role="alert">
+            @ViewModel.Error
+        </div>
+    </div>
+</div>

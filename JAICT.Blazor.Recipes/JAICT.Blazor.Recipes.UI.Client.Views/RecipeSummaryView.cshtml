@@ -1,0 +1,16 @@
+﻿@using JAICT.Blazor.Recipes.UI.Client.Mvvm.View
+@using JAICT.Blazor.Recipes.UI.Client.Mvvm
+@using JAICT.Blazor.Recipes.UI.Client.ViewModels
+@inherits ViewComponentBase<RecipeSummaryViewModel>
+<div class="container-fluid border rounded">
+    <div class="row mt-2">
+        <div class="col">
+            <p>These are your recipes :-)</p>
+        </div>
+    </div>
+    <div class="row mt-2 mb-2">
+        <div class="col">
+            <DynamicComponentCollection ViewModelCollectionManager=@ViewModel.RecipeViewModelManager />
+        </div>
+    </div>
+</div>

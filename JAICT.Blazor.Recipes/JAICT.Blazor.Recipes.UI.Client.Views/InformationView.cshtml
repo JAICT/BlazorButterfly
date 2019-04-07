@@ -1,0 +1,9 @@
+﻿@using JAICT.Blazor.Recipes.UI.Client.Mvvm.View
+@using JAICT.Blazor.Recipes.UI.Client.ViewModels
+@inherits ViewComponentBase<InformationViewModel>
+
+<div class="top-row px-4">
+    <p hidden="@(!string.IsNullOrWhiteSpace(@ViewModel.OrganisationName))">Not logged in</p>
+    <p hidden="@(string.IsNullOrWhiteSpace(@ViewModel.OrganisationName))">Current Organisation: @ViewModel.OrganisationName</p>
+    <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
+</div>

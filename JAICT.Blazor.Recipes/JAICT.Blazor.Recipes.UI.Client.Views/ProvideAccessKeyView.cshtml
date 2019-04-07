@@ -1,0 +1,25 @@
+﻿@using JAICT.Blazor.Recipes.UI.Client.Mvvm.View
+@using JAICT.Blazor.Recipes.UI.Client.ViewModels
+@inherits ViewComponentBase<ProvideAccessKeyViewModel>
+
+<div>
+    <div class="ml-auto">
+        <h3>Provide your organisations access key</h3>
+        <div class="input-group mb-3">
+            <input type="password" title="(paste or type your access key here)" class="form-control" bind=ViewModel.AccessKey />
+        </div>
+        <div class="input-group mb-3">
+            <button onclick=@(() => ViewModel.LoginCommand.Execute()) type="button" class="btn btn-primary btn-sm px-5">
+                Login ➝
+            </button>
+        </div>
+        <div>
+            <button onclick=@(() => ViewModel.LogoutCommand.Execute()) type="button" class="btn btn-sm px-5">
+                Logout ➝
+            </button>
+        </div>
+        <div hidden="@(string.IsNullOrWhiteSpace(@ViewModel.Error))" class="alert alert-danger" role="alert">
+            @ViewModel.Error
+        </div>
+    </div>
+</div>

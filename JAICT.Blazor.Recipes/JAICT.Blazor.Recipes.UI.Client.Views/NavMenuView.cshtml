@@ -1,0 +1,24 @@
+﻿@using JAICT.Blazor.Recipes.UI.Client.Mvvm.View
+@using JAICT.Blazor.Recipes.UI.Client.ViewModels
+@inherits ViewComponentBase<NavMenuViewModel>
+
+<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">Blazor Recipes Application</a>
+    <button class="navbar-toggler" onclick=@ToggleNavMenu>
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+<div class=@(collapseNavMenu ? "collapse" : null) onclick=@ToggleNavMenu>
+    <ul class="nav flex-column">
+        <DynamicComponentCollection ViewModelCollectionManager=@ViewModel.MenuItemCollectionManager />
+    </ul>
+</div>
+
+@functions {
+bool collapseNavMenu = true;
+
+void ToggleNavMenu()
+{
+    collapseNavMenu = !collapseNavMenu;
+}
+}

@@ -1,0 +1,20 @@
+﻿@using JAICT.Blazor.Recipes.UI.Client.Mvvm.View
+@using JAICT.Blazor.Recipes.UI.Client.ViewModels
+@inherits ViewComponentBase<NavMenuItemViewModel>
+
+<li class="nav-item px-3">
+    <button class="nav-link btn-block" onclick=@(() => ViewModel.NavigationItem.Navigate())>
+        <span class=@GetClass() aria-hidden="true"></span> @ViewModel.Title
+    </button>
+</li>
+
+@functions {
+
+string GetClass()
+{
+    if (ViewModel.IsHomeLink)
+        return "oi oi-home";
+    else
+        return "oi oi-list-rich";
+}
+}

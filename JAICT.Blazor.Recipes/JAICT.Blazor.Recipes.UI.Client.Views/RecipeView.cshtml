@@ -1,0 +1,36 @@
+﻿@using JAICT.Blazor.Recipes.UI.Client.Mvvm.View
+@using JAICT.Blazor.Recipes.UI.Client.ViewModels
+@inherits ViewComponentBase<RecipeViewModel>
+
+<div class="row">
+    <div class="col">
+        <h3>@ViewModel.RecipeRegistration.RecipeName</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <label>Typical Season: <b>@ViewModel.RecipeRegistration.Season</b></label>&nbsp;,&nbsp;
+        <label>Ingredient Characteristics: <b>@ViewModel.RecipeRegistration.IngredientCharacteristics</b></label>
+    </div>        
+</div>        
+<div class="btn-group btn-group-justified" role="group" aria-label="Ingredient action">
+    <div class="btn-group">
+        <button type="button" onclick=@(() => ViewModel.RetrieveIngredientsCommand.Execute()) class="btn btn-primary btn-sm px-5">
+            Show Ingredients ➝
+        </button>
+    </div>
+    <div class="btn-group">
+        <button type="button" onclick=@(() => ViewModel.RemoveIngredientsCommand.Execute()) class="btn btn-primary btn-sm px-5">
+            Hide Ingredients ➝
+        </button>
+    </div>
+    <div class="btn-group">
+        <button type="button" onclick=@(() => ViewModel.AddIngredientCommand.Execute()) class="btn btn-primary btn-sm px-5">
+            Add Ingredient ➝
+        </button>
+    </div>
+</div>
+<div class="row">
+    <DynamicComponentCollection ViewModelCollectionManager=@ViewModel.IngredientViewModelManager />
+</div>
+

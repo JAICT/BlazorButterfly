@@ -1,0 +1,14 @@
+﻿@using JAICT.Blazor.Recipes.UI.Client.Mvvm.View
+@using JAICT.Blazor.Recipes.UI.Client.ViewModels
+@inherits ViewComponentBase<MainViewModel>
+
+<div class="sidebar">
+    <DynamicComponent ViewModelManager=@ViewModel.NavigationMenuModelManager />
+</div>
+
+<div class="main">
+    <DynamicComponent ViewModelManager=@ViewModel.InformationViewModelManager />
+    <div class="content px-4">
+        <DynamicComponent ViewModelManager=@ViewModel.ContentViewModelManager />
+    </div>
+</div>

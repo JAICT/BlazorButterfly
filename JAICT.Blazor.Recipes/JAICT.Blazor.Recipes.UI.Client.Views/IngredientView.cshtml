@@ -1,0 +1,40 @@
+﻿@using JAICT.Blazor.Recipes.UI.Client.Mvvm.View
+@using JAICT.Blazor.Recipes.UI.Client.ViewModels
+@inherits ViewComponentBase<IngredientViewModel>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="content px-4">
+                <p>@ViewModel.Ingredient.IngredientName</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="content px-4">
+                <p>@ViewModel.Ingredient.Description</p>
+            </div>            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="content px-4">
+                <p>Amount</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="content px-4">
+                <p>@ViewModel.Ingredient.Amount</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="content px-4">
+                <p>@ViewModel.Ingredient.AmountType</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="content px-4">
+                <p>@ViewModel.Ingredient.IngredientType</p>
+            </div>
+        </div>
+    </div>
+</div>

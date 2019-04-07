@@ -1,0 +1,33 @@
+﻿@using JAICT.Blazor.Recipes.UI.Client.Mvvm.View
+@using JAICT.Blazor.Recipes.UI.Client.Mvvm
+@using JAICT.Blazor.Recipes.UI.Client.ViewModels
+@inherits ViewComponentBase<RegisterRecipeViewModel>
+
+<div class="form-group">
+    <div class="ml-auto">
+        <h3>Register a new recipe</h3>
+        <div class="input-group mb-3">
+            <p>Name of your recipe</p>
+        </div>
+        <div class="input-group mb-3">
+            <input title="Enter your recipe name here" class="form-control" bind=ViewModel.RecipeName />
+        </div>
+        <div class="input-group mb-3">
+            <p>Select a typical season for your recipe</p>
+        </div>
+        <div class="input-group mb-3">
+            <DynamicComponent ViewModelTypeSelector=@(new SpecificViewTypeSelector<DropdownSelectionView>()) ViewModelManager=@ViewModel.SeasonSelectionModelManager />
+        </div>
+        <div class="input-group mb-3">
+            <p>Select the characteristics of the ingredients of this recipe</p>
+        </div>
+        <div class="input-group mb-3">
+            <DynamicComponent ViewModelTypeSelector=@(new SpecificViewTypeSelector<DropdownSelectionView>()) ViewModelManager=@ViewModel.IngredientTypeSelectionManager />
+        </div>
+        <div class="input-group mb-3">
+            <button onclick=@(() => ViewModel.RegisterRecipeCommand.Execute()) type="button" class="btn btn-primary px-5">
+                Create ➝
+            </button>
+        </div>
+    </div>
+</div>

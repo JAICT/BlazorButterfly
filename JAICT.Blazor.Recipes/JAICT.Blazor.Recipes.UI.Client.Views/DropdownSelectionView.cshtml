@@ -1,0 +1,7 @@
+﻿@using JAICT.Blazor.Recipes.UI.Client.Mvvm.View
+@using JAICT.Blazor.Recipes.UI.Client.Mvvm
+@using JAICT.Blazor.Recipes.UI.Client.ViewModels
+@inherits ViewComponentBase<SelectionViewModel>
+<select class="form-control" id="select-box" bind=@ViewModel.SelectedIndex>
+    <DynamicComponentCollection ViewModelTypeSelector=@(new SpecificViewTypeSelector<JAICT.Blazor.Recipes.UI.Client.Views.DropdownSelectionItemView>()) ViewModelCollectionManager=@ViewModel.Items />
+</select>

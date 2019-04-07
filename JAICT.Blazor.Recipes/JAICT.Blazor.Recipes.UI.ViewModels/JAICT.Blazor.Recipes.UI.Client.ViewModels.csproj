@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JAICT.Blazor.Recipes.Application\JAICT.Blazor.Recipes.Application.csproj" />
+    <ProjectReference Include="..\JAICT.Blazor.Recipes.Entities\JAICT.Blazor.Recipes.Entities.csproj" />
+    <ProjectReference Include="..\JAICT.Blazor.Recipes.UI.Client.Mvvm\JAICT.Blazor.Recipes.UI.Client.Mvvm.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,35 @@
+﻿@using JAICT.Blazor.Recipes.UI.Client.Mvvm.View
+@using JAICT.Blazor.Recipes.UI.Client.Mvvm
+@using JAICT.Blazor.Recipes.UI.Client.ViewModels
+@inherits ViewComponentBase<AddIngredientViewModel>
+
+<div class="col">
+    <div class="form-group border rounded">
+        <div class="m-2">
+            <label><b>NOT IMPLEMENTED - Add a new ingredient</b></label>
+            <div class="input-group mb-4">
+                <label>Add a missing ingredient to your dish</label>
+            </div>
+            <div class="input-group mb-4">
+                <input title="Enter your ingredient name here" class="form-control" />
+            </div>
+            <div class="input-group mb-4">
+                <label>Set a description of what the ingredient adds to the dish</label>
+            </div>
+            <div class="input-group mb-4">
+                <input title="Ingredient description" class="form-control" />
+            </div>
+            <div class="input-group mb-4">
+                <label>Select the type of the ingredient for this recipe</label>
+            </div>
+            <div class="input-group mb-4">
+                <DynamicComponent ViewModelTypeSelector=@(new SpecificViewTypeSelector<DropdownSelectionView>()) ViewModelManager=@ViewModel.IngredientTypeSelectionManager />
+            </div>
+            <div class="input-group mb-4">
+                <button type="button" class="btn btn-primary px-5">
+                    Add (Not implemented) ➝
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
